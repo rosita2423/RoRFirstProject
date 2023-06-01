@@ -1,0 +1,24 @@
+<style>
+    .sizeInputs{
+        margin-left: 530px;
+    }
+</style>
+
+<body class='bg-light   '>
+    <h1 class='mt-5 text-center bg-primary text-white'>Articles#index</h1>
+    <p class='text-center mt-1'>Find me in app/views/articles/index.html.erb</p>
+
+    <h2 class='text-justify text-center mx-auto w-75 mt-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, quas amet saepe est unde suscipit deserunt sed, blanditiis, corporis quasi reiciendis adipisci placeat excepturi autem ea dolorem porro a minima!</h2>
+
+    <h3 class='mt-5 text-center pb-2 bg-secondary w-25 m-auto text-white'>Set of Articles</h3>
+
+    <ul class='sizeInputs mt-3'>
+        <%@articles.each do |article|%>
+        <li>
+            <a class='text-center' href="/articles/<%= article.id %>"><%= article.title %></a>
+        </li>
+        <%end%>
+    </ul>
+</body>
+
+

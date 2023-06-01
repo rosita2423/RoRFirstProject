@@ -1,0 +1,39 @@
+<style>
+    .size1{
+        font-size: 18px;
+    }
+    .buttonFont{
+        font-size: 20px;
+    }
+</style>
+
+<%= form_with model:@article do |form|%>
+
+<div class='d-flex justify-content-center mt-5'>
+    <div class='mx-2 size1 text-danger'>
+        <%= form.label:title %>
+    </div>
+    <%= form.text_field:title %>
+
+    <% @article.errors.full_messages_for(:title).each do |message| %>
+        <div> <%= message %> </div>
+    <% end %>
+
+</div>
+
+<div class='d-flex justify-content-center text-danger mt-5'>
+    <div class='mx-2 size1'>
+        <%= form.label:body %>
+    </div>
+    <%= form.text_field:body %>
+
+    <% @article.errors.full_messages_for(:body).each do |message| %>
+        <div> <%= message %> </div>
+    <% end %>
+</div>
+
+<div class='d-flex justify-content-center mt-5'>
+    <%= form.submit class: "text-success px-4 py-2"%>
+</div>
+
+<% end %>

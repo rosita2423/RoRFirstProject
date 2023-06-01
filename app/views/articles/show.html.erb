@@ -1,0 +1,33 @@
+<style>
+    .par{
+        font-size: 25px;
+    }
+    .sizeEdit{
+        font-size: 20px;
+    }
+</style>
+
+
+
+<h1 class='text-center py-5 bg-primary text-white'>
+<%= @article.title %>
+</h1>
+
+<p class='par text-center mt-5'>
+    <%= @article.body%>
+</p>
+
+<div class='d-flex justify-content-center'>
+    <ul class='mt-5 d-flex justify-content-between w-25'>
+        <li class='sizeEdit'>
+            <%= link_to 'Edit', edit_article_path(@article) %>
+        </li>
+
+        <li class='sizeEdit text-danger'>
+            <%= link_to 'Destroy', article_path(@article), data: {
+                turbo_method: :delete,
+                turbo_confirm: "Are you sure to delete this record?"
+            } %>
+        </li>
+    </ul>
+</div>
